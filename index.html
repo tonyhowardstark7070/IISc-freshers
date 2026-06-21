@@ -5,92 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IISc Bangalore | Freshers 2026</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Modern Energetic Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content fade-in-up">
+    <!-- Animated Background Setup -->
+    <div class="bg-base"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <main class="glass-container">
+        <!-- Hero Section -->
+        <section class="hero bento-card tilt-effect" data-tilt data-tilt-max="2" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
             <div class="logo-wrapper">
                 <img src="logo.jpg" alt="IISc Logo" class="logo">
             </div>
-            <p class="pre-title">Welcome to</p>
-            <h1 class="main-title">IISc Bangalore</h1>
-            <p class="institute-name">Indian Institute of Science</p>
-            
-            <div class="divider"></div>
-            
-            <p class="subtitle">The Start of Our Journey Together</p>
-            <p class="quote">You're not just joining an institute, you're joining <span class="highlight">a family.</span></p>
-            
-            <div class="badge-wrapper">
-                <span class="batch-badge">Freshers 2026</span>
-            </div>
-        </div>
-    </section>
+            <div class="badge">BATCH OF 2026</div>
+            <h1 class="main-title">Welcome to <br><span class="text-gradient">IISc Bangalore</span></h1>
+            <p class="subtitle">You're not just joining an institute. You're joining a family. The start of an epic journey.</p>
+        </section>
 
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title fade-in-up">One Community. Endless Possibilities.</h2>
-            
-            <div class="features-grid">
-                <div class="feature-item fade-in-up">
-                    <div class="icon-box"><i class="fa-solid fa-users"></i></div>
-                    <h3>Meet Future Batchmates</h3>
-                    <p>Connect with your peers before stepping on campus.</p>
-                </div>
-                
-                <div class="feature-item fade-in-up">
-                    <div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <h3>Seniors' Support</h3>
-                    <p>Get authentic guidance and mentorship from seniors.</p>
-                </div>
-                
-                <div class="feature-item fade-in-up">
-                    <div class="icon-box"><i class="fa-regular fa-bell"></i></div>
-                    <h3>Stay Updated</h3>
-                    <p>Never miss an important event or orientation update.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="join-section">
-        <div class="container fade-in-up">
-            <div class="instruction-card">
-                <i class="fa-solid fa-circle-info info-icon"></i>
-                <p>Send your <strong>Approx Rank, Name, and Branch</strong> to any of the representatives below to get added to the official WhatsApp community.</p>
+        <!-- Bento Grid for Features -->
+        <section class="bento-grid">
+            <div class="bento-card feature-card tilt-effect" data-tilt data-tilt-max="5">
+                <div class="icon-wrapper"><i class="fa-solid fa-user-group"></i></div>
+                <h3>Future Batchmates</h3>
+                <p>Vibe with your peers before stepping foot on campus.</p>
             </div>
 
-            <h2 class="section-title">Contact Representatives</h2>
+            <div class="bento-card feature-card highlight-card tilt-effect" data-tilt data-tilt-max="5">
+                <div class="icon-wrapper"><i class="fa-solid fa-rocket"></i></div>
+                <h3>Seniors' Support</h3>
+                <p>Get the real ground-zero advice and mentorship.</p>
+            </div>
+
+            <div class="bento-card feature-card tilt-effect" data-tilt data-tilt-max="5">
+                <div class="icon-wrapper"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Stay Updated</h3>
+                <p>Zero spam. Only the updates and events you need.</p>
+            </div>
+        </section>
+
+        <!-- Action / Contact Section -->
+        <section class="contact-section bento-card">
+            <div class="alert-box">
+                <i class="fa-solid fa-fingerprint"></i>
+                <p>Send your <strong>Approx Rank, Name, and Branch</strong> to verify and get added to the Official Group.</p>
+            </div>
+
+            <h2 class="section-title">Community Reps</h2>
             
-            <div class="reps-grid">
-                <a href="https://wa.me/919871138552?text=Hi Medhansh, I am joining IISc. Name: [Your Name], Approx Rank: [Your Rank], Branch: [Your Branch]." target="_blank" class="rep-card fade-in-up">
+            <div class="reps-container">
+                <!-- Medhansh -->
+                <a href="https://wa.me/919871138552?text=Hi Medhansh, I am joining IISc. Name: [Your Name], Approx Rank: [Your Rank], Branch: [Your Branch]." target="_blank" class="rep-card tilt-effect" data-tilt data-tilt-scale="1.02">
+                    <div class="rep-avatar">M</div>
                     <div class="rep-info">
                         <h4>Medhansh</h4>
                         <p>+91 98711 38552</p>
                     </div>
-                    <div class="whatsapp-btn-small">
-                        <i class="fa-brands fa-whatsapp"></i> <span>Message</span>
-                    </div>
+                    <div class="wa-btn"><i class="fa-brands fa-whatsapp"></i> Chat</div>
                 </a>
 
-                <a href="https://wa.me/919456676196?text=Hi Vidhaan, I am joining IISc. Name: [Your Name], Approx Rank: [Your Rank], Branch: [Your Branch]." target="_blank" class="rep-card fade-in-up">
+                <!-- Vidhaan -->
+                <a href="https://wa.me/919456676196?text=Hi Vidhaan, I am joining IISc. Name: [Your Name], Approx Rank: [Your Rank], Branch: [Your Branch]." target="_blank" class="rep-card tilt-effect" data-tilt data-tilt-scale="1.02">
+                    <div class="rep-avatar">V</div>
                     <div class="rep-info">
                         <h4>Vidhaan</h4>
                         <p>+91 94566 76196</p>
                     </div>
-                    <div class="whatsapp-btn-small">
-                        <i class="fa-brands fa-whatsapp"></i> <span>Message</span>
-                    </div>
+                    <div class="wa-btn"><i class="fa-brands fa-whatsapp"></i> Chat</div>
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
+    <!-- Vanilla Tilt JS for 3D interactions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
