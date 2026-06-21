@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IISc Bangalore - Freshers 2026 Community</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-blue: #0b1c34;
+            --gold: #d4af37;
+            --light-gold: #f4ebd0;
+            --bg-offwhite: #f8f8f5;
+            --text-dark: #333333;
+            --whatsapp-green: #25D366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-offwhite);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            /* Fallback gradient if you don't have the background image hosted yet */
+            background: linear-gradient(to bottom, rgba(248, 248, 245, 0.9), rgba(248, 248, 245, 0.7)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 5px solid var(--primary-blue);
+        }
+
+        .header-top {
+            margin-bottom: 3rem;
+        }
+
+        .header-top h2 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .header-top p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .welcome-text {
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .main-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #8b5e34;
+            margin-bottom: 1rem;
+        }
+
+        .quote {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            color: #444;
+        }
+
+        .quote strong {
+            color: #8b5e34;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        /* Features Section */
+        .features {
+            text-align: center;
+            padding: 4rem 2rem;
+            background-color: white;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-blue);
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::before, .section-title::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 1px;
+            background-color: var(--primary-blue);
+        }
+
+        .section-title::before { left: -60px; }
+        .section-title::after { right: -60px; }
+
+        .feature-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            text-align: center;
+            width: 200px;
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e8d08c, #b38b36);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem auto;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-item p {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* Action Section */
+        .action-section {
+            padding: 3rem 2rem;
+            text-align: center;
+            background-color: var(--bg-offwhite);
+        }
+
+        .instruction-box {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .instruction-box i {
+            color: #8b5e34;
+            font-size: 1.2rem;
+        }
+
+        .whatsapp-btn {
+            background-color: var(--whatsapp-green);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            margin-bottom: 3rem;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Contacts Section */
+        .contacts {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid #ccc;
+        }
+
+        .contact-title {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .rep-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .rep-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .rep-card:hover {
+            transform: scale(1.05);
+            border: 1px solid var(--whatsapp-green);
+        }
+
+        .rep-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .rep-card.vidhaan .rep-icon {
+            background-color: #d4af37;
+        }
+
+        .rep-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+        }
+
+        .rep-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.8rem; }
+            .feature-grid { gap: 2rem; }
+            .rep-grid { flex-direction: column; align-items: center; }
+            .rep-card { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="header-top">
+            <h2>IISc BANGALORE</h2>
+            <p>Indian Institute of Science Bangalore</p>
+        </div>
+        
+        <p class="welcome-text">WELCOME TO</p>
+        <h1 class="main-title">IISc BANGALORE</h1>
+        
+        <p class="subtitle">THE START OF OUR JOURNEY TOGETHER</p>
+        
+        <p class="quote">You're not just joining an institute, you're joining <strong>a family.</strong></p>
+        
+        <div class="badge">FRESHERS 2026</div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h3 class="section-title">ONE COMMUNITY. ENDLESS POSSIBILITIES.</h3>
+        
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <p>Meet Future<br>Batchmates</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <p>Seniors'<br>Support</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+                <p>Stay Updated<br>Always</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action & Contact Section -->
+    <section class="action-section">
+        <a href="#contacts" class="whatsapp-btn">
+            <i class="fa-brands fa-whatsapp"></i> JOIN THE WHATSAPP COMMUNITY
+        </a>
+        
+        <div class="instruction-box">
+            <i class="fa-regular fa-file-lines"></i>
+            <p><strong>SEND YOUR APPROX RANK, NAME AND BRANCH TO ANY OF THE REPRESENTATIVES TO JOIN.</strong></p>
+        </div>
+
+        <div class="contacts" id="contacts">
+            <h3 class="contact-title">— CONTACT YOUR COMMUNITY REPRESENTATIVES —</h3>
+            
+            <div class="rep-grid">
+                <!-- Pre-filled WhatsApp Link for Medhansh -->
+                <a href="https://wa.me/919871138552?text=Hi Medhansh, I am a fresher joining IISc. My Name is [Your Name], Approx Rank is [Your Rank], and Branch is [Your Branch]. Please add me to the community group." target="_blank" class="rep-card">
+                    <div class="rep-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="rep-info">
+                        <h4>Medhansh</h4>
+                        <p>+91 98711 38552</p>
+                    </div>
+                    <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.5rem; margin-left: 10px;"></i>
+                </a>
+
+                <!-- Pre-filled WhatsApp Link for Vidhaan -->
+                <a href="https://wa.me/919456676196?text=Hi Vidhaan, I am a fresher joining IISc. My Name is [Your Name], Approx Rank is [Your Rank], and Branch is [Your Branch]. Please add me to the community group." target="_blank" class="rep-card vidhaan">
+                    <div class="rep-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="rep-info">
+                        <h4>Vidhaan</h4>
+                        <p>+91 94566 76196</p>
+                    </div>
+                    <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.5rem; margin-left: 10px;"></i>
+                </a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.8rem; color: #888;">Click on a representative to send them a WhatsApp message directly.</p>
+        </div>
+    </section>
+
+</body>
+</html>
