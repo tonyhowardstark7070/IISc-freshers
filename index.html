@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IISc Bangalore - Freshers 2026 Community</title>
+    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* Base Styles */
         :root {
             --primary-blue: #0b1c34;
+            --primary-blue-light: #16325c;
             --gold: #d4af37;
             --light-gold: #f4ebd0;
-            --bg-offwhite: #f8f8f5;
-            --text-dark: #333333;
+            --bg-color: #f0f2f5;
             --whatsapp-green: #25D366;
         }
 
@@ -24,270 +26,285 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-offwhite);
-            color: var(--text-dark);
-            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: #333;
+            overflow-x: hidden;
         }
 
-        /* Header / Hero Section */
+        /* Hero Section with Parallax feel */
         .hero {
-            /* Fallback gradient if you don't have the background image hosted yet */
-            background: linear-gradient(to bottom, rgba(248, 248, 245, 0.9), rgba(248, 248, 245, 0.7)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            background: linear-gradient(to bottom, rgba(11, 28, 52, 0.85), rgba(11, 28, 52, 0.95)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             padding: 4rem 2rem;
             text-align: center;
-            border-bottom: 5px solid var(--primary-blue);
-        }
-
-        .header-top {
-            margin-bottom: 3rem;
+            color: white;
+            position: relative;
         }
 
         .header-top h2 {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            font-weight: 800;
-            letter-spacing: 1px;
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .header-top p {
             font-size: 0.9rem;
-            color: #555;
-        }
-
-        .welcome-text {
-            font-weight: 600;
-            letter-spacing: 3px;
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
+            color: #ccc;
+            margin-bottom: 2rem;
         }
 
         .main-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 800;
-            color: var(--primary-blue);
+            color: white;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             text-transform: uppercase;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
         .subtitle {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            color: #8b5e34;
-            margin-bottom: 1rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
         }
 
         .quote {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             max-width: 600px;
-            margin: 0 auto 2rem auto;
-            color: #444;
-        }
-
-        .quote strong {
-            color: #8b5e34;
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 5px;
-            font-weight: 600;
-            letter-spacing: 2px;
+            color: #ddd;
             margin-bottom: 2rem;
         }
 
-        /* Features Section */
-        .features {
-            text-align: center;
-            padding: 4rem 2rem;
-            background-color: white;
+        .badge {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Glassmorphism Features Section */
+        .features-wrapper {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f2f5 100%);
+            padding: 5rem 2rem;
+            position: relative;
         }
 
         .section-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 2px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
             color: var(--primary-blue);
-            margin-bottom: 3rem;
-            position: relative;
-            display: inline-block;
+            margin-bottom: 4rem;
+            letter-spacing: 2px;
         }
-
-        .section-title::before, .section-title::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            width: 40px;
-            height: 1px;
-            background-color: var(--primary-blue);
-        }
-
-        .section-title::before { left: -60px; }
-        .section-title::after { right: -60px; }
 
         .feature-grid {
             display: flex;
             justify-content: center;
-            gap: 4rem;
+            gap: 3rem;
             flex-wrap: wrap;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        .feature-item {
+        .feature-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            width: 250px;
             text-align: center;
-            width: 200px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background: white;
         }
 
         .icon-circle {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #e8d08c, #b38b36);
+            background: linear-gradient(135deg, var(--gold), #aa8822);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem auto;
+            margin: 0 auto 1.5rem auto;
             color: white;
             font-size: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            animation: float 3s ease-in-out infinite;
         }
 
-        .feature-item p {
-            font-weight: 600;
+        /* Floating animation for icons */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .feature-card p {
+            font-weight: 700;
             color: var(--primary-blue);
+            font-size: 1.1rem;
         }
 
-        /* Action Section */
+        /* Action & Contacts Section */
         .action-section {
-            padding: 3rem 2rem;
+            padding: 5rem 2rem;
+            background-color: var(--primary-blue);
             text-align: center;
-            background-color: var(--bg-offwhite);
-        }
-
-        .instruction-box {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 1.5rem;
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .instruction-box i {
-            color: #8b5e34;
-            font-size: 1.2rem;
+            color: white;
         }
 
         .whatsapp-btn {
-            background-color: var(--whatsapp-green);
+            background: linear-gradient(45deg, #25D366, #128C7E);
             color: white;
             text-decoration: none;
-            padding: 15px 30px;
+            padding: 18px 40px;
             border-radius: 50px;
             font-size: 1.2rem;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
             margin-bottom: 3rem;
+            letter-spacing: 1px;
         }
 
         .whatsapp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
         }
 
-        /* Contacts Section */
+        .whatsapp-btn i {
+            font-size: 1.5rem;
+        }
+
+        .instruction-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .instruction-box i {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
         .contacts {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid #ccc;
         }
 
         .contact-title {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 3rem;
             font-weight: 600;
+            letter-spacing: 2px;
         }
 
         .rep-grid {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .rep-card {
             display: flex;
             align-items: center;
-            gap: 15px;
-            background: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
             text-decoration: none;
-            color: inherit;
+            color: white;
+            width: 300px;
         }
 
         .rep-card:hover {
-            transform: scale(1.05);
-            border: 1px solid var(--whatsapp-green);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--whatsapp-green);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         .rep-icon {
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary-blue);
-            color: white;
+            width: 50px;
+            height: 50px;
+            background-color: var(--gold);
+            color: var(--primary-blue);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
 
-        .rep-card.vidhaan .rep-icon {
-            background-color: #d4af37;
+        .rep-info {
+            text-align: left;
         }
 
         .rep-info h4 {
             margin: 0;
-            font-size: 1.1rem;
-            color: var(--primary-blue);
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
         .rep-info p {
             margin: 0;
             font-size: 0.9rem;
-            color: #666;
+            color: #ccc;
+        }
+
+        .rep-card i.fa-whatsapp {
+            color: var(--whatsapp-green);
+            font-size: 1.8rem;
+            margin-left: auto;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .main-title { font-size: 2.8rem; }
-            .feature-grid { gap: 2rem; }
-            .rep-grid { flex-direction: column; align-items: center; }
-            .rep-card { width: 100%; justify-content: center; }
+            .main-title { font-size: 2.5rem; }
+            .feature-grid { gap: 1.5rem; }
+            .rep-card { width: 100%; }
         }
     </style>
 </head>
@@ -295,41 +312,40 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="header-top">
-            <h2>IISc BANGALORE</h2>
+        <div class="header-top" data-aos="fade-down" data-aos-duration="1000">
+            <h2>IISc Bangalore</h2>
             <p>Indian Institute of Science Bangalore</p>
         </div>
         
-        <p class="welcome-text">WELCOME TO</p>
-        <h1 class="main-title">IISc BANGALORE</h1>
+        <h1 class="main-title" data-aos="zoom-in" data-aos-duration="1200">IISc Bangalore</h1>
         
-        <p class="subtitle">THE START OF OUR JOURNEY TOGETHER</p>
+        <p class="subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">THE START OF OUR JOURNEY TOGETHER</p>
         
-        <p class="quote">You're not just joining an institute, you're joining <strong>a family.</strong></p>
+        <p class="quote" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">You're not just joining an institute, you're joining <strong style="color: var(--gold);">a family.</strong></p>
         
-        <div class="badge">FRESHERS 2026</div>
+        <div class="badge" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">FRESHERS 2026</div>
     </section>
 
     <!-- Features Section -->
-    <section class="features">
-        <h3 class="section-title">ONE COMMUNITY. ENDLESS POSSIBILITIES.</h3>
+    <section class="features-wrapper">
+        <h3 class="section-title" data-aos="fade-up">ONE COMMUNITY. ENDLESS POSSIBILITIES.</h3>
         
         <div class="feature-grid">
-            <div class="feature-item">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="icon-circle">
                     <i class="fa-solid fa-users"></i>
                 </div>
                 <p>Meet Future<br>Batchmates</p>
             </div>
             
-            <div class="feature-item">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-circle">
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
                 <p>Seniors'<br>Support</p>
             </div>
             
-            <div class="feature-item">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
                 <div class="icon-circle">
                     <i class="fa-solid fa-comments"></i>
                 </div>
@@ -340,21 +356,23 @@
 
     <!-- Action & Contact Section -->
     <section class="action-section">
-        <a href="#contacts" class="whatsapp-btn">
-            <i class="fa-brands fa-whatsapp"></i> JOIN THE WHATSAPP COMMUNITY
-        </a>
+        <div data-aos="zoom-in">
+            <a href="#contacts" class="whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i> JOIN THE WHATSAPP COMMUNITY
+            </a>
+        </div>
         
-        <div class="instruction-box">
-            <i class="fa-regular fa-file-lines"></i>
+        <div class="instruction-box" data-aos="fade-up">
+            <i class="fa-solid fa-circle-info"></i>
             <p><strong>SEND YOUR APPROX RANK, NAME AND BRANCH TO ANY OF THE REPRESENTATIVES TO JOIN.</strong></p>
         </div>
 
         <div class="contacts" id="contacts">
-            <h3 class="contact-title">— CONTACT YOUR COMMUNITY REPRESENTATIVES —</h3>
+            <h3 class="contact-title" data-aos="fade-up">— CONTACT YOUR COMMUNITY REPRESENTATIVES —</h3>
             
             <div class="rep-grid">
-                <!-- Pre-filled WhatsApp Link for Medhansh -->
-                <a href="https://wa.me/919871138552?text=Hi Medhansh, I am a fresher joining IISc. My Name is [Your Name], Approx Rank is [Your Rank], and Branch is [Your Branch]. Please add me to the community group." target="_blank" class="rep-card">
+                <!-- Medhansh -->
+                <a href="https://wa.me/919871138552?text=Hi Medhansh, I am a fresher joining IISc. My Name is [Your Name], Approx Rank is [Your Rank], and Branch is [Your Branch]. Please add me to the community group." target="_blank" class="rep-card" data-aos="fade-right">
                     <div class="rep-icon">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -362,11 +380,11 @@
                         <h4>Medhansh</h4>
                         <p>+91 98711 38552</p>
                     </div>
-                    <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.5rem; margin-left: 10px;"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
                 </a>
 
-                <!-- Pre-filled WhatsApp Link for Vidhaan -->
-                <a href="https://wa.me/919456676196?text=Hi Vidhaan, I am a fresher joining IISc. My Name is [Your Name], Approx Rank is [Your Rank], and Branch is [Your Branch]. Please add me to the community group." target="_blank" class="rep-card vidhaan">
+                <!-- Vidhaan -->
+                <a href="https://wa.me/919456676196?text=Hi Vidhaan, I am a fresher joining IISc. My Name is [Your Name], Approx Rank is [Your Rank], and Branch is [Your Branch]. Please add me to the community group." target="_blank" class="rep-card" data-aos="fade-left">
                     <div class="rep-icon">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -374,12 +392,20 @@
                         <h4>Vidhaan</h4>
                         <p>+91 94566 76196</p>
                     </div>
-                    <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.5rem; margin-left: 10px;"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
                 </a>
             </div>
-            <p style="margin-top: 15px; font-size: 0.8rem; color: #888;">Click on a representative to send them a WhatsApp message directly.</p>
         </div>
     </section>
 
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize animations
+        AOS.init({
+            once: true, // Animation happens only once while scrolling down
+            offset: 100 // Trigger point
+        });
+    </script>
 </body>
 </html>
