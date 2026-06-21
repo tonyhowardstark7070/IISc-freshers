@@ -3,435 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IISc Bangalore - Freshers 2026 Community</title>
+    <title>IISc Bangalore | Freshers 2026</title>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <!-- Futuristic Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation Library CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-blue: #0b1c34;
-            --primary-blue-light: #16325c;
-            --gold: #d4af37;
-            --light-gold: #f4ebd0;
-            --bg-color: #f0f2f5;
-            --whatsapp-green: #25D366;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-color);
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Hero Section with Parallax feel */
-        .hero {
-            background: linear-gradient(to bottom, rgba(11, 28, 52, 0.85), rgba(11, 28, 52, 0.95)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 4rem 2rem;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        /* Logo Styling */
-        .iisc-logo {
-            width: 120px;
-            height: 120px;
-            object-fit: contain;
-            background-color: #ffffff;
-            border-radius: 50%;
-            padding: 12px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            border: 3px solid var(--gold);
-            transition: transform 0.3s ease;
-        }
-
-        .iisc-logo:hover {
-            transform: scale(1.05);
-        }
-
-        .header-top {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .header-top h2 {
-            font-size: 1.2rem;
-            color: var(--gold);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .header-top p {
-            font-size: 0.9rem;
-            color: #ccc;
-            margin-bottom: 2rem;
-        }
-
-        .main-title {
-            font-size: 4.5rem;
-            font-weight: 800;
-            color: white;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            text-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        .subtitle {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
-        }
-
-        .quote {
-            font-size: 1.2rem;
-            max-width: 600px;
-            color: #ddd;
-            margin-bottom: 2rem;
-        }
-
-        .badge {
-            background: rgba(212, 175, 55, 0.2);
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 10px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-        }
-
-        /* Glassmorphism Features Section */
-        .features-wrapper {
-            background: linear-gradient(135deg, #ffffff 0%, #f0f2f5 100%);
-            padding: 5rem 2rem;
-            position: relative;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary-blue);
-            margin-bottom: 4rem;
-            letter-spacing: 2px;
-        }
-
-        .feature-grid {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.5);
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            width: 250px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            transition: all 0.4s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            background: white;
-        }
-
-        .icon-circle {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--gold), #aa8822);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem auto;
-            color: white;
-            font-size: 2rem;
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .feature-card p {
-            font-weight: 700;
-            color: var(--primary-blue);
-            font-size: 1.1rem;
-        }
-
-        /* Action & Contacts Section */
-        .action-section {
-            padding: 5rem 2rem;
-            background-color: var(--primary-blue);
-            text-align: center;
-            color: white;
-        }
-
-        .whatsapp-btn {
-            background: linear-gradient(45deg, #25D366, #128C7E);
-            color: white;
-            text-decoration: none;
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-            margin-bottom: 3rem;
-            letter-spacing: 1px;
-        }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
-        }
-
-        .whatsapp-btn i {
-            font-size: 1.5rem;
-        }
-
-        .instruction-box {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 15px;
-            padding: 1.5rem;
-            max-width: 700px;
-            margin: 0 auto 4rem auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .instruction-box i {
-            color: var(--gold);
-            font-size: 1.5rem;
-        }
-
-        .contacts {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .contact-title {
-            font-size: 1.2rem;
-            color: var(--gold);
-            margin-bottom: 3rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-        }
-
-        .rep-grid {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .rep-card {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 20px 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: white;
-            width: 300px;
-        }
-
-        .rep-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--whatsapp-green);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .rep-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--gold);
-            color: var(--primary-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-
-        .rep-info {
-            text-align: left;
-        }
-
-        .rep-info h4 {
-            margin: 0;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .rep-info p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #ccc;
-        }
-
-        .rep-card i.fa-whatsapp {
-            color: var(--whatsapp-green);
-            font-size: 1.8rem;
-            margin-left: auto;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .main-title { font-size: 2.5rem; }
-            .feature-grid { gap: 1.5rem; }
-            .rep-card { width: 100%; }
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="header-top" data-aos="fade-down" data-aos-duration="1000">
-            <!-- IISc Logo Added Here -->
-            <img src="https://upload.wikimedia.org/wikipedia/en/e/e9/Indian_Institute_of_Science_2019_logo.svg" alt="IISc Logo" class="iisc-logo">
-            
-            <h2>IISc Bangalore</h2>
-            <p>Indian Institute of Science Bangalore</p>
-        </div>
-        
-        <h1 class="main-title" data-aos="zoom-in" data-aos-duration="1200">IISc Bangalore</h1>
-        
-        <p class="subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">THE START OF OUR JOURNEY TOGETHER</p>
-        
-        <p class="quote" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">You're not just joining an institute, you're joining <strong style="color: var(--gold);">a family.</strong></p>
-        
-        <div class="badge" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">FRESHERS 2026</div>
-    </section>
+    <!-- Background Layer using bg.jpg -->
+    <div class="background-image"></div>
+    <div class="background-overlay"></div>
 
-    <!-- Features Section -->
-    <section class="features-wrapper">
-        <h3 class="section-title" data-aos="fade-up">ONE COMMUNITY. ENDLESS POSSIBILITIES.</h3>
-        
-        <div class="feature-grid">
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon-circle">
-                    <i class="fa-solid fa-users"></i>
-                </div>
-                <p>Meet Future<br>Batchmates</p>
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero" data-tilt data-tilt-max="2" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="IISc Logo" class="iisc-logo">
             </div>
             
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon-circle">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-                <p>Seniors'<br>Support</p>
+            <h2 class="sub-heading">INDIAN INSTITUTE OF SCIENCE BANGALORE</h2>
+            <h1 class="main-title glitch" data-text="IISc BANGALORE">IISc BANGALORE</h1>
+            
+            <div class="terminal-box">
+                <span class="prompt">> SYSTEM.INIT()</span>
+                <p id="typing-text"></p>
             </div>
             
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
-                <div class="icon-circle">
-                    <i class="fa-solid fa-comments"></i>
-                </div>
-                <p>Stay Updated<br>Always</p>
+            <div class="cyber-badge">BATCH OF 2026</div>
+        </header>
+
+        <!-- Features Grid -->
+        <section class="features">
+            <div class="feature-card" data-tilt data-tilt-max="10" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                <i class="fa-solid fa-network-wired neon-icon"></i>
+                <h3>NETWORK</h3>
+                <p>Connect with future innovators and batchmates.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Action & Contact Section -->
-    <section class="action-section">
-        <div data-aos="zoom-in">
-            <a href="#contacts" class="whatsapp-btn">
-                <i class="fa-brands fa-whatsapp"></i> JOIN THE WHATSAPP COMMUNITY
-            </a>
-        </div>
-        
-        <div class="instruction-box" data-aos="fade-up">
-            <i class="fa-solid fa-circle-info"></i>
-            <p><strong>SEND YOUR APPROX RANK, NAME AND BRANCH TO ANY OF THE REPRESENTATIVES TO JOIN.</strong></p>
-        </div>
-
-        <div class="contacts" id="contacts">
-            <h3 class="contact-title" data-aos="fade-up">— CONTACT YOUR COMMUNITY REPRESENTATIVES —</h3>
             
-            <div class="rep-grid">
+            <div class="feature-card" data-tilt data-tilt-max="10" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                <i class="fa-solid fa-microchip neon-icon"></i>
+                <h3>GUIDANCE</h3>
+                <p>Direct support and mentorship from seniors.</p>
+            </div>
+            
+            <div class="feature-card" data-tilt data-tilt-max="10" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                <i class="fa-solid fa-satellite-dish neon-icon"></i>
+                <h3>UPDATES</h3>
+                <p>Real-time info on events and orientation.</p>
+            </div>
+        </section>
+
+        <!-- Action Section -->
+        <section class="action-panel">
+            <div class="warning-box">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>SEND YOUR APPROX RANK, NAME AND BRANCH TO REPS TO GET ACCESS.</span>
+            </div>
+
+            <h3 class="rep-title">COMMUNITY REPRESENTATIVES</h3>
+            
+            <div class="contact-grid">
                 <!-- Medhansh -->
-                <a href="https://wa.me/919871138552?text=Hi Medhansh, I am a fresher joining IISc. My Name is [Your Name], Approx Rank is [Your Rank], and Branch is [Your Branch]. Please add me to the community group." target="_blank" class="rep-card" data-aos="fade-right">
-                    <div class="rep-icon">
-                        <i class="fa-solid fa-user"></i>
+                <a href="https://wa.me/919871138552?text=Hi Medhansh, I am joining IISc. Name: [Your Name], Approx Rank: [Your Rank], Branch: [Your Branch]." target="_blank" class="cyber-card rep-card" data-tilt data-tilt-scale="1.05">
+                    <div class="rep-avatar">
+                        <i class="fa-solid fa-user-astronaut"></i>
                     </div>
-                    <div class="rep-info">
+                    <div class="rep-details">
                         <h4>Medhansh</h4>
-                        <p>+91 98711 38552</p>
+                        <p class="phone">+91 98711 38552</p>
                     </div>
-                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
                 </a>
 
                 <!-- Vidhaan -->
-                <a href="https://wa.me/919456676196?text=Hi Vidhaan, I am a fresher joining IISc. My Name is [Your Name], Approx Rank is [Your Rank], and Branch is [Your Branch]. Please add me to the community group." target="_blank" class="rep-card" data-aos="fade-left">
-                    <div class="rep-icon">
-                        <i class="fa-solid fa-user"></i>
+                <a href="https://wa.me/919456676196?text=Hi Vidhaan, I am joining IISc. Name: [Your Name], Approx Rank: [Your Rank], Branch: [Your Branch]." target="_blank" class="cyber-card rep-card" data-tilt data-tilt-scale="1.05">
+                    <div class="rep-avatar">
+                        <i class="fa-solid fa-user-astronaut"></i>
                     </div>
-                    <div class="rep-info">
+                    <div class="rep-details">
                         <h4>Vidhaan</h4>
-                        <p>+91 94566 76196</p>
+                        <p class="phone">+91 94566 76196</p>
                     </div>
-                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- AOS Animation Library JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize animations
-        AOS.init({
-            once: true,
-            offset: 100
-        });
-    </script>
+    <!-- 3D Tilt Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
